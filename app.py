@@ -1,6 +1,12 @@
 from flask import Flask
+import sys
+sys.path.append('./functions')
 
 app = Flask(__name__)
+
+
+from functions.db import setup_db
+setup_db()
 
 
 @app.route('/')
