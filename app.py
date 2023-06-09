@@ -1,12 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
 import sys
 sys.path.append('./functions')
+
 
 app = Flask(__name__)
 
 
 from functions.db import setup_db
 setup_db()
+
+
+@app.route('/', methods=["GET"])
+def titel():  # put application's code here
+    return render_template("index.html", titel=titel)
 
 
 @app.route('/')
