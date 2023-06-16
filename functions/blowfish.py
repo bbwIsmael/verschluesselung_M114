@@ -7,7 +7,7 @@ def blowfish_encrypt(text, key):
     return encrypted_data
 
 
-def blowfish_decrypt(encrypted_data, key):
+def blowfish_decrypt(text, key):
     cipher = Blowfish.new(key.encode(), Blowfish.MODE_ECB)
-    decrypted_data = cipher.decrypt(encrypted_data)
+    decrypted_data = cipher.decrypt(text)
     return decrypted_data.decode()
