@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Verschlüsselung</title>
+  <title>Jamael Verschlüsselung</title>
+  <link rel="stylesheet" type="text/css" href="static/stylesheet.css">
 </head>
 <body>
-{#titel#}
-<h2>
-    <u>Unsere Web-app</u>
-</h2>
+  <h1>Jamael Verschlüsselung</h1>
+  <div class="container">
+    <form>
+      <label for="encryptionMethod">Verschlüsselungsmethode:</label>
+      <select id="encryptionMethod" name="encryptionMethod">
+        <option value="methode1">Caesar-Verschlüsselung</option>
+        <option value="methode2">XOR-Verschlüsselung</option>
+        <option value="methode3">Hash-Verschlüsselung</option>
+      </select>
+
+      <label for="text">Text:</label>
+      <input type="text" id="text" name="text">
+
+      <div class="input-container" id="shiftValueContainer">
+        <label for="shiftValue">Shift Value:</label>
+        <input type="number" id="shiftValue" name="shiftValue" min="1" max="25">
+      </div>
+
+      <div class="input-container" id="xorKeyContainer">
+        <label for="xorKey">XOR Key:</label>
+        <input type="text" id="xorKey" name="xorKey">
+      </div>
+
+      <div class="button-container">
+        <input type="submit" value="Encrypt">
+      </div>
+    </form>
+
+    <div class="output-container">
+      <label for="encodedText">Encoded Text:</label>
+      <textarea id="encodedText" readonly></textarea>
+    </div>
+
+    <div class="button-container">
+      <input type="submit" value="Decrypt">
+    </div>
+
+    <div class="output-container">
+      <label for="decodedText">Decoded Text:</label>
+      <textarea id="decodedText" readonly></textarea>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
