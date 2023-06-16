@@ -41,7 +41,7 @@ def insert_counter(name):
     conn = sqlite3.connect('database.db')
     conn.cursor()
 
-    conn.execute("INSERT INTO counter (name) VALUES (?);", name)
+    conn.execute("INSERT INTO counter (name) VALUES (?);", (name,))
 
     conn.commit()
     conn.close()
