@@ -1,0 +1,15 @@
+{% macro hash() -%}
+    <div id="hash-wrapper" class="wrapper-hidden">
+        <label for="hash-input">Text:</label>
+        <input type="text" id="hash-input">
+
+        <div class="button-container">
+            <button id="hash-hashButton">Hash</button>
+        </div>
+
+        <div class="output-container">
+            <label for="hash-hashed">Hashed Text:</label>
+            <textarea id="hash-hashed"></textarea>
+        </div>
+    </div>
+{%- endmacro %}
