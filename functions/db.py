@@ -18,6 +18,7 @@ def get_total():
     conn.cursor()
 
     total = conn.execute("SELECT COUNT(*) FROM counter;")
+    total = total.fetchone()[0]
 
     conn.commit()
     conn.close()
@@ -29,7 +30,8 @@ def get_count_per_function():
     conn = sqlite3.connect('database.db')
     conn.cursor()
 
-    counts = conn.execute("SELECT COUNT(*) FROM counter GROUP BY name;")
+    counts = conn.execute("SELECT COUNT(*), name FROM counter GROUP BY name;")
+    counts = counts.fetchall()
 
     conn.commit()
     conn.close()

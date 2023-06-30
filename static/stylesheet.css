@@ -1,51 +1,228 @@
- body {
-  font-family: Arial, sans-serif;
-  margin: 50px;
+/* Reset styles */
+* {
+    box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333333;
+    line-height: 1.5;
+    display: flex;
+    margin: 1rem 4rem;
+}
 
+/* Responsive styles */
+@media screen and (max-width: 840px) {
+    body {
+        display: block;
+    }
+}
+
+.wrapper-hidden {
+    display: none;
 }
 
 .container {
-  width: 400px;
-  margin: 0 auto;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 label {
-  display: block;
-  margin-top: 20px;
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-select,
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+#main {
+    padding: 30px 0;
+    flex-grow: 2;
+}
+
+#counter {
+    text-align: center;
+    margin-top: 30px;
+    flex-grow: 1;
+}
+
+#counter h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#counter p {
+    margin-bottom: 10px;
+}
+
+#counter strong {
+    font-weight: bold;
+}
+
+#total-counter {
+    font-size: 18px;
+}
+
+#caesar-counter,
+#hash-counter,
+#xor-counter {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555555;
+}
+
+/* Styles for encryption method sections */
+section {
+    margin-bottom: 20px;
+}
+
+section label {
+    margin-top: 20px;
+}
+
+section button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+section button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Input styles */
 input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Button styles */
+button,
 input[type="submit"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+input[type="reset"] {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
+button, #encryptionMethod {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.button-container input[type="submit"] {
-  width: 100px;
-  margin-left: 10px;
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #0056b3;
 }
 
-textarea {
-  height: 200px;
+/* Checkbox and radio button styles */
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
-.output-container {
-  margin-top: 40px;
+/* Placeholder styles */
+::-webkit-input-placeholder {
+    color: #999999;
 }
+
+::-moz-placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #999999;
+}
+
+:-moz-placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+/* Custom select styles */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 0.5rem center;
+    background-size: 1em;
+    cursor: pointer;
+}
+
+/* Disable default number input styles */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+

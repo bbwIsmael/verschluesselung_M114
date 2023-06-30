@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import sys
 sys.path.append('./functions')
 
-from functions.blowfish import blowfish_encrypt, blowfish_decrypt
 from functions.caesar import caesar
 from functions.hash import hash_text
 from functions.xor import xor
@@ -10,36 +9,15 @@ from functions.xor import xor
 app = Flask(__name__)
 
 
-from functions.db import setup_db
+from functions.db import setup_db, get_total, get_count_per_function
 setup_db()
 
 
 @app.route('/', methods=["GET"])
 def titel():  # put application's code here
-    return render_template("index.html", titel=titel)
-
-
-# Blowfish schnittstellene
-@app.route('/blowfish/encrypt', methods=["GET"])
-def blowfish_enc():
-    text = request.args.get("text")
-    key = request.args.get("key")
-
-    if not text or not key:
-        return "Ey gib mal en text oder en key mit!"
-
-    return blowfish_encrypt(text, key)
-
-
-@app.route('/blowfish/decrypt', methods=["GET"])
-def blowfish_dec():
-    text = request.args.get("text")
-    key = request.args.get("key")
-
-    if not text or not key:
-        return "Ey gib mal en text oder en key mit!"
-
-    return blowfish_decrypt(text, key)
+    counter = get_total()
+    counts = get_count_per_function()
+    return render_template("index.html", counter=counter, counts=counts)
 
 
 # Caesar schnittstellene
