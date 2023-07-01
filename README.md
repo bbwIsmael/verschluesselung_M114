@@ -12,8 +12,8 @@
 ## Tech-Stack
 
 - HTML, CSS, JavaScript
-- Flask (Python), Jinja2
-- SQLite3
+- Flask (Python), Jinja2 (Template)
+- SQLite3 (Datenbank)
 
 ## Spezial
 
