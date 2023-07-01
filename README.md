@@ -1,27 +1,27 @@
-# Jamael Verschlüsselung
+# 🔒 Jamael Verschlüsselung
 
 - *Von: **Ja**nnis Milz, Is**mael** Abdi Blandon*
 - *Link zu Jamael: https://m114.jannismilz.com*
 
-## Verschlüsselungen
+## 🔐Verschlüsselungen
 
 - Hash
 - XOR
 - Caesar
 
-## Tech-Stack
+## 💻 Tech-Stack
 
 - HTML, CSS, JavaScript
 - Flask (Python), Jinja2 (Template)
 - SQLite3 (Datenbank)
 
-## Spezial
+## ✨Spezial
 
 - Als Spezial für dieses Projekt haben wir einen globalen Counter eingebaut, der trackt welche Funktion wie viel mal ausgeführt wurde.
 - Unsere Applikation ist zudem auf einem echten Webserver gehostet under der Domain https://m114.jannismilz.com und läuft einwandfrei.
 - Sie sieht nicht nur gut auf dem Computer aus, sondern ist auch angepasst für Handy und Tablet.
 
-## Entwicklung
+## 👨‍💻 Entwicklung
 
 Das Projekt kann ganz einfach heruntergeladen werden und selber aufgesetzt werden:
 
